@@ -17,7 +17,7 @@ yarn start
 
 | artifact                   | badge                                                                                                                                                                                                           |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| backstage-build            | [![backstage-build](https://github.com/rock-hu/boilerplate/actions/workflows/backstage-build.yaml/badge.svg)](https://github.com/rock-hu/devx/actions/workflows/backstage-build.yaml)                           |
+| backstage-build            | [![backstage-build](https://github.com/rock-hu/devx/actions/workflows/backstage-build.yaml/badge.svg)](https://github.com/rock-hu/devx/actions/workflows/backstage-build.yaml)                                  |
 | backstage-containerization | [![backstage-containerization](https://github.com/rock-hu/devx/actions/workflows/backstage-containerization.yaml/badge.svg)](https://github.com/rock-hu/devx/actions/workflows/backstage-containerization.yaml) |
 | koyeb-deploy               | [![koyeb-deploy](https://github.com/rock-hu/devx/actions/workflows/koyeb-deploy.yaml/badge.svg)](https://github.com/rock-hu/devx/actions/workflows/koyeb-deploy.yaml)                                           |
 
