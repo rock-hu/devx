@@ -8,3 +8,5 @@ To start the app, run:
 yarn install
 yarn start
 ```
+
+![](./docs/Untitled-2025-05-29-1627.png)
