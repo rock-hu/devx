@@ -20,8 +20,11 @@ jobs:
       attestations: write
       id-token: write
     steps:
-      - run: yarn install --immutable
-      - run: yarn tsc
-      - run: yarn build:backend
+      - name: yarn install
+        run: yarn install --immutable
+      - name: yarn tsc
+        run: yarn tsc
+      - name: yarn build-image
+        run: yarn build-image
       - name: Log in to registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin

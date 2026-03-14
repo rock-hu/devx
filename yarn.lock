@@ -17825,6 +17825,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"devx@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "devx@workspace:."
+  dependencies:
+    "@backstage/cli": "npm:^0.35.4"
+    "@backstage/e2e-test-utils": "npm:^0.1.2"
+    "@jest/environment-jsdom-abstract": "npm:^30.0.0"
+    "@playwright/test": "npm:^1.32.3"
+    "@types/jest": "npm:^30.0.0"
+    jest: "npm:^30.2.0"
+    jsdom: "npm:^27.1.0"
+    node-gyp: "npm:^10.0.0"
+    prettier: "npm:^2.3.2"
+    typescript: "npm:~5.8.0"
+  languageName: unknown
+  linkType: soft
+
 "diff3@npm:0.0.3":
   version: 0.0.3
   resolution: "diff3@npm:0.0.3"
@@ -29365,23 +29382,6 @@ __metadata:
   checksum: 10c0/f38742da34cfee5e899302615fa157aa77cb6a2a1495e5e3ce4cc9c540d3262e235bbe60caa31562bbfe492b01fdb3e7a8c43c39d842d3293bcf843123b766fc
   languageName: node
   linkType: hard
-
-"root@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root@workspace:."
-  dependencies:
-    "@backstage/cli": "npm:^0.35.4"
-    "@backstage/e2e-test-utils": "npm:^0.1.2"
-    "@jest/environment-jsdom-abstract": "npm:^30.0.0"
-    "@playwright/test": "npm:^1.32.3"
-    "@types/jest": "npm:^30.0.0"
-    jest: "npm:^30.2.0"
-    jsdom: "npm:^27.1.0"
-    node-gyp: "npm:^10.0.0"
-    prettier: "npm:^2.3.2"
-    typescript: "npm:~5.8.0"
-  languageName: unknown
-  linkType: soft
 
 "rtl-css-js@npm:^1.16.1":
   version: 1.16.1
