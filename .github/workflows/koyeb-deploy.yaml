@@ -12,13 +12,17 @@ on:
 jobs:
   pull:
     name: koyeb-cli deploy
-    runs-on: koyeb/koyeb-cli:latest
+    runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
       attestations: write
       id-token: write
     steps:
+      - name: koyeb install
+        run: curl -fsSL https://raw.githubusercontent.com/koyeb/koyeb-cli/master/install.sh | sh
+      - name: add koyeb to PATH
+        run: export PATH=$HOME/.koyeb/bin:$PATH
       - name: koyeb login
         run: koyeb login --token ${{ secrets.KOYEB_TOKEN }}
       - name: koyeb apps list
@@ -27,3 +31,5 @@ jobs:
         run: koyeb services list
       - name: koyeb service redeploy
         run: koyeb service redeploy backstage-devx/backstage
+      - name: koyeb instances list
+        run: koyeb instances list --app backstage-devx
