@@ -1,7 +1,14 @@
 name: koyeb-deploy
 on:
-  schedule:
-    - cron: "0 0 * * 1"
+  push:
+    branches:
+      - "master"
+    paths:
+      - "package.json"
+      - "packages/app/package.json"
+      - "packages/backend/package.json"
+      - ".github/workflows/backstage-containerization.yaml"
+      - ".github/workflows/koyeb-deploy.yaml"
 env:
   IMAGE_NAME: backstage
 jobs:
