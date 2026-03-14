@@ -6,7 +6,10 @@ on:
     paths:
       - "package.json"
       - "packages/app/package.json"
+      - "packages/app/src/**"
       - "packages/backend/package.json"
+      - "packages/backend/src/**"
+      - "packages/backend/Dockerfile"
       - ".github/workflows/backstage-containerization.yaml"
       - ".github/workflows/koyeb-deploy.yaml"
 jobs:
@@ -24,7 +27,7 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/koyeb/koyeb-cli/master/install.sh | sh
           export PATH=$HOME/.koyeb/bin:$PATH
           koyeb version
-          koyeb login --organization ${{ secrets.KOYEB_ORGANIZATION }} --token ${{ secrets.KOYEB_TOKEN }}
+          koyeb login --token ${{ secrets.KOYEB_TOKEN }}
           koyeb apps list
           koyeb services list
           koyeb services redeploy backstage-devx/backstage

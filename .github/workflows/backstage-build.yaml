@@ -6,10 +6,11 @@ on:
     paths:
       - "package.json"
       - "packages/app/package.json"
-      - "packages/backend/package.json"
-      - ".github/workflows/backstage-containerization.yaml"
       - "packages/app/src/**"
+      - "packages/backend/package.json"
       - "packages/backend/src/**"
+      - "packages/backend/Dockerfile"
+      - ".github/workflows/backstage-build.yaml"
 jobs:
   build:
     runs-on: ubuntu-latest
