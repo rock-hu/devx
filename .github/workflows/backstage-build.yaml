@@ -11,4 +11,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-      - run: npm install --force --verbose
+      # - run: npm install --force --verbose
+      - run: yarn install --immutable
+      - run: yarn tsc
+      - run: yarn build:backend
