@@ -1,28 +1,28 @@
 name: koyeb-deploy
-
 on:
   schedule:
     - cron: "0 0 * * 1"
-
+env:
+  IMAGE_NAME: backstage
 jobs:
-  deploy:
-    concurrency:
-      group: "${{ github.ref_name }}"
-      cancel-in-progress: true
+  pull:
+    name: docker pull ghcr.io
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+      attestations: write
+      id-token: write
     steps:
-      - name: Install and configure the Koyeb CLI
-        uses: koyeb-community/koyeb-actions@v2
-        with:
-          api_token: "${{ secrets.KOYEB_TOKEN }}"
-
-      - name: Build and deploy the application
-        uses: koyeb/action-git-deploy@v1
-        with:
-          app-name: backstage-devx
-          service-ports: "7007:http"
-          service-routes: "/:7007"
-          git-builder: docker
-          git-docker-dockerfile: Dockerfile.koyeb
-          privileged: true
-          skip-cache: true
+      - name: Log in to registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Pull image from registry
+        run: docker pull ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
+      - name: docker images
+        run: docker images
+      # - name: docker run
+      #   run: docker run -it -p 7007:7007 backstage
+      - name: Deploy to Koyeb
+        run: |
+          docker tag ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest koyeb/${{ env.IMAGE_NAME }}:latest
+          docker push koyeb/${{ env.IMAGE_NAME }}:latest
