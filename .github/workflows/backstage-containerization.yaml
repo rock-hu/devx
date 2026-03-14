@@ -9,7 +9,7 @@ on:
       - "packages/backend/package.json"
       - ".github/workflows/backstage-containerization.yaml"
 env:
-  IMAGE_NAME: backstage-devx
+  IMAGE_NAME: backstage
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -36,5 +36,9 @@ jobs:
         run: ls -la packages/app/dist
       - name: yarn build-image
         run: yarn build-image
+      - name: docker images
+        run: docker images
       - name: Log in to registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Push image to registry
+        run: docker push ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
