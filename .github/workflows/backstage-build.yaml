@@ -20,5 +20,6 @@ jobs:
           node-version: 24
       # - run: npm install --force --verbose
       - run: yarn install --immutable
+      - run: yarn backstage-cli config:check --strict
       - run: yarn tsc
       - run: yarn build:backend

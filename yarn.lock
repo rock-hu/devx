@@ -1704,62 +1704,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage-community/plugin-graphiql@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@backstage-community/plugin-graphiql@npm:0.13.0"
-  dependencies:
-    "@backstage/core-compat-api": "npm:^0.5.8"
-    "@backstage/core-components": "npm:^0.18.7"
-    "@backstage/core-plugin-api": "npm:^1.12.3"
-    "@backstage/frontend-plugin-api": "npm:^0.14.1"
-    "@material-ui/core": "npm:^4.12.2"
-    "@types/react": "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
-    graphiql: "npm:^3.0.6"
-    graphql: "npm:^16.0.0"
-    graphql-config: "npm:^5.0.2"
-    graphql-ws: "npm:^5.4.1"
-    react-use: "npm:^17.2.4"
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: 10c0/8c5ce8a26540422185824c70fd6c1367688f77f48a5f746ce4a3ff7c9cfda69a7c574bf69a7ed35d71e7c4b8d97dab21375aac4b2f09dc228ec08751705f69cc
-  languageName: node
-  linkType: hard
-
-"@backstage-community/plugin-lighthouse-common@npm:^0.16.0":
-  version: 0.16.0
-  resolution: "@backstage-community/plugin-lighthouse-common@npm:0.16.0"
-  dependencies:
-    "@backstage/config": "npm:^1.3.6"
-  checksum: 10c0/c864fa8e46c4d2a187fa76a03251c72c361e1e8680b25a5cd0101899faca622d746ed228a235eaf11b0339b3d03c6a2df2cb676bb38fe0eb739226d9125495e0
-  languageName: node
-  linkType: hard
-
-"@backstage-community/plugin-lighthouse@npm:^0.19.0":
-  version: 0.19.0
-  resolution: "@backstage-community/plugin-lighthouse@npm:0.19.0"
-  dependencies:
-    "@backstage-community/plugin-lighthouse-common": "npm:^0.16.0"
-    "@backstage/catalog-model": "npm:^1.7.6"
-    "@backstage/core-compat-api": "npm:^0.5.8"
-    "@backstage/core-components": "npm:^0.18.7"
-    "@backstage/core-plugin-api": "npm:^1.12.3"
-    "@backstage/frontend-plugin-api": "npm:^0.14.1"
-    "@backstage/plugin-catalog-react": "npm:^2.0.0"
-    "@material-ui/core": "npm:^4.12.2"
-    "@material-ui/icons": "npm:^4.9.1"
-    "@material-ui/lab": "npm:4.0.0-alpha.61"
-    "@types/react": "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
-    react-use: "npm:^17.2.4"
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: 10c0/eac9833d83e7a71be206d9e681332c3137c5fbe6dc4de091bad7d3e09cba462dc2456d16fbdb5084a71174fe6b0408499df12875ca7fc2f377dea2f8f72d17e1
-  languageName: node
-  linkType: hard
-
 "@backstage-community/plugin-shortcuts@npm:^0.18.0":
   version: 0.18.0
   resolution: "@backstage-community/plugin-shortcuts@npm:0.18.0"
@@ -5531,51 +5475,6 @@ __metadata:
     react: ^16.8.0 || ^17 || ^18
     react-dom: ^16.8.0 || ^17 || ^18
   checksum: 10c0/9c973266017c08b929f9e6adc65cc0fe8405b239f230e5cd4106c1a0b368adc27f110c13ba2a8391ea8437b915c6ba81d565ca3200e117a4109a067e1418928c
-  languageName: node
-  linkType: hard
-
-"@graphiql/react@npm:^0.29.0":
-  version: 0.29.0
-  resolution: "@graphiql/react@npm:0.29.0"
-  dependencies:
-    "@graphiql/toolkit": "npm:^0.11.2"
-    "@headlessui/react": "npm:^1.7.15"
-    "@radix-ui/react-dialog": "npm:^1.0.4"
-    "@radix-ui/react-dropdown-menu": "npm:^2.0.5"
-    "@radix-ui/react-tooltip": "npm:^1.0.6"
-    "@radix-ui/react-visually-hidden": "npm:^1.0.3"
-    "@types/codemirror": "npm:^5.60.8"
-    clsx: "npm:^1.2.1"
-    codemirror: "npm:^5.65.3"
-    codemirror-graphql: "npm:^2.2.1"
-    copy-to-clipboard: "npm:^3.2.0"
-    framer-motion: "npm:^6.5.1"
-    get-value: "npm:^3.0.1"
-    graphql-language-service: "npm:^5.3.1"
-    markdown-it: "npm:^14.1.0"
-    react-compiler-runtime: "npm:19.1.0-rc.1"
-    set-value: "npm:^4.1.0"
-  peerDependencies:
-    graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
-    react: ^16.8.0 || ^17 || ^18
-    react-dom: ^16.8.0 || ^17 || ^18
-  checksum: 10c0/514879b5a884213e9b30f77ec60ee131a9ed8ee1043430f689705925db7175579ebf20be69380ec8fbcc97a27271944b755012adac2f5cea8fb5fa14339547e9
-  languageName: node
-  linkType: hard
-
-"@graphiql/toolkit@npm:^0.11.2":
-  version: 0.11.3
-  resolution: "@graphiql/toolkit@npm:0.11.3"
-  dependencies:
-    "@n1ru4l/push-pull-async-iterable-iterator": "npm:^3.1.0"
-    meros: "npm:^1.1.4"
-  peerDependencies:
-    graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
-    graphql-ws: ">= 4.5.0"
-  peerDependenciesMeta:
-    graphql-ws:
-      optional: true
-  checksum: 10c0/dda0801680076586d41344bea5d4d42f0a0fe68913ed1c0916331004552e9aa7090986d73d29e358b814441425895c48fe20a448c775102e883c2ed5a5b904e2
   languageName: node
   linkType: hard
 
@@ -15172,8 +15071,6 @@ __metadata:
   resolution: "app@workspace:packages/app"
   dependencies:
     "@backstage-community/plugin-github-actions": "npm:^0.21.1"
-    "@backstage-community/plugin-graphiql": "npm:^0.13.0"
-    "@backstage-community/plugin-lighthouse": "npm:^0.19.0"
     "@backstage-community/plugin-shortcuts": "npm:^0.18.0"
     "@backstage-community/plugin-tech-radar": "npm:^1.16.0"
     "@backstage-community/plugin-todo": "npm:^0.17.1"
@@ -16922,7 +16819,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"codemirror-graphql@npm:^2.0.11, codemirror-graphql@npm:^2.0.13, codemirror-graphql@npm:^2.2.1":
+"codemirror-graphql@npm:^2.0.11, codemirror-graphql@npm:^2.0.13":
   version: 2.2.4
   resolution: "codemirror-graphql@npm:2.2.4"
   dependencies:
@@ -20745,15 +20642,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-value@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "get-value@npm:3.0.1"
-  dependencies:
-    isobject: "npm:^3.0.1"
-  checksum: 10c0/38cca1618ffe9a07a8b105a352c4de27bea36032d4916d21a0636ab5ff3bf1aa3bf200c6875f59f55cd4fb3f5156244dec838fbaf2ba580332d13ac51a25fabd
-  languageName: node
-  linkType: hard
-
 "getopts@npm:2.3.0":
   version: 2.3.0
   resolution: "getopts@npm:2.3.0"
@@ -21074,20 +20962,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphiql@npm:^3.0.6":
-  version: 3.9.0
-  resolution: "graphiql@npm:3.9.0"
-  dependencies:
-    "@graphiql/react": "npm:^0.29.0"
-    react-compiler-runtime: "npm:19.1.0-rc.1"
-  peerDependencies:
-    graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
-    react: ^16.8.0 || ^17 || ^18
-    react-dom: ^16.8.0 || ^17 || ^18
-  checksum: 10c0/bdc23b7a5f5dbce4d2d67332a6efaef94802ed687a06a8527d4bc6ab291a811f800309c2605b7df0b7f9a3bfb2bedb83a9fbf3691da5f4f7f912cc825c3f67e1
-  languageName: node
-  linkType: hard
-
 "graphql-config@npm:^5.0.2":
   version: 5.1.6
   resolution: "graphql-config@npm:5.1.6"
@@ -21122,7 +20996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-language-service@npm:5.5.0, graphql-language-service@npm:^5.2.0, graphql-language-service@npm:^5.2.2, graphql-language-service@npm:^5.3.1":
+"graphql-language-service@npm:5.5.0, graphql-language-service@npm:^5.2.0, graphql-language-service@npm:^5.2.2":
   version: 5.5.0
   resolution: "graphql-language-service@npm:5.5.0"
   dependencies:
@@ -28758,15 +28632,6 @@ __metadata:
     react: ^16.8.5 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.5 || ^17.0.0 || ^18.0.0
   checksum: 10c0/5bc04f6dcfededc6e5c90e696cda07816a018eada52f7438ded839f03786e3f319aa8a0bc7b14b86fb26a12c0e5ba53e8c5a4bf3832a8f827dd70f1410675525
-  languageName: node
-  linkType: hard
-
-"react-compiler-runtime@npm:19.1.0-rc.1":
-  version: 19.1.0-rc.1
-  resolution: "react-compiler-runtime@npm:19.1.0-rc.1"
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0 || ^19.0.0 || ^0.0.0-experimental
-  checksum: 10c0/7bb644339464e0193dba15ac4f5324d10f31dcd1e1807d7fd156355154f5fa360b59b4ffd07dc1138c493c1eebf9ef27d695d833ebe1b1030b3a9201a99e0698
   languageName: node
   linkType: hard
 

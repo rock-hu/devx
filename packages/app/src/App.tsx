@@ -39,7 +39,7 @@ import { NotificationsPage } from '@backstage/plugin-notifications';
 import { SignalsDisplay } from '@backstage/plugin-signals';
 // import { GraphiQLPage } from '@backstage-community/plugin-graphiql';
 import homePlugin from '@backstage/plugin-home/alpha';
-// import lighthousePlugin from '@backstage-community/plugin-lighthouse';
+// import { LighthousePage } from '@backstage-community/plugin-lighthouse';
 import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
 
 
@@ -106,6 +106,7 @@ const routes = (
     <Route path="/notifications" element={<NotificationsPage />} />
     
     <Route path="/tech-radar" element={<TechRadarPage />}/>    
+    {/* <Route path="/lighthouse" element={<LighthousePage />} /> */}
   </FlatRoutes>
 );
 

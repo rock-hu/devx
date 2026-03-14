@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: DevX - Scaffolded Backstage
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: DevX
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -18,6 +18,8 @@ backend:
     # Uncomment the following host directive to bind to specific interfaces
     # host: 127.0.0.1
   csp:
+    # frame-src:
+    #   - http://your-service-url
     connect-src: ["'self'", 'http:', 'https:']
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
     # Default Helmet Content-Security-Policy values can be removed by setting the key to false
@@ -51,11 +53,11 @@ integrations:
   #     target: 'https://example.com'
   #     changeOrigin: true
 
-  proxy:
-  '/circleci/api':
-    target: https://circleci.com/api/v1.1
-    headers:
-      Circle-Token: ${CIRCLECI_TOKEN}
+  # proxy:
+  # '/circleci/api':
+  #   target: https://circleci.com/api/v1.1
+  #   headers:
+  #     Circle-Token: ${CIRCLECI_TOKEN}
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -68,14 +70,32 @@ techdocs:
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
+# auth.providers.github
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
+  # providers:
+  #   # See https://backstage.io/docs/auth/guest/provider
+  #   guest: {}
+  # Auth provider registered for 'github' is misconfigured. This could mean the configs under auth.providers.github are missing or the environment variables used are not defined.
+  # environment: development
   providers:
-    # See https://backstage.io/docs/auth/guest/provider
-    guest: {}
-
+    guest:
+      userEntityRef: user:engineering/rock-hu # userEntityRef -> ownershipEntityRefs
+      ownershipEntityRefs: [group:microservices-development/rock-hu]
+      dangerouslyAllowOutsideDevelopment: false
+    # github:
+    #   development:
+    #     clientId: ${GITHUB_CLIENT_ID_DEV}
+    #     clientSecret: ${GITHUB_CLIENT_SECRET_DEV}
+    #     sessionDuration: { hours: 24 }
+    #     signIn:
+    #       resolvers:
+    #         - resolver: emailMatchingUserEntityProfileEmail # usernameMatchingUserEntityName,emailMatchingUserEntityProfileEmail,emailLocalPartMatchingUserEntityName
 # scaffolder:
 # see https://backstage.io/docs/features/software-templates/configuration for software template options
+
+# lighthouse:
+#   baseUrl: http://your-service-url
 
 catalog:
   readonly: true
@@ -83,7 +103,7 @@ catalog:
   orphanStrategy: keep
   orphanProviderStrategy: keep
   stitchingStrategy:
-    mode: immediate  
+    mode: immediate
   # import:
   #   entityFilename: catalog-info.yaml
   #   pullRequestBranchName: backstage-integration

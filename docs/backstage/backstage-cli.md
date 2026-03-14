@@ -228,3 +228,16 @@ catalog:
 permission:
   enabled: true
 ```
+
+
+## yarn backstage-cli config:check --strict 
+
+```
+yarn backstage-cli config:check --strict
+Loaded config from app-config.yaml
+
+Error: Configuration does not match schema
+
+  Config must have required property 'lighthouse' { missingProperty=lighthouse } at 
+  Config must NOT have additional properties { additionalProperty=/circleci/api } at /integrations
+```

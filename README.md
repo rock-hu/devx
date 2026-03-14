@@ -9,6 +9,10 @@ yarn install
 yarn start
 ```
 
+```bash
+yarn backstage-cli info > backstage.log
+```
+
 ## badges
 
 | artifact                   | badge                                                                                                                                                                                                           |
@@ -20,9 +24,6 @@ yarn start
 ![](./docs/Untitled-2025-05-29-1627.png)
 
 ## Token scopes
-
-
-
 
 When creating a personal access token on GitHub, you must select scopes to define the level of access for the token. The scopes required vary depending on your use of the integration:
 
@@ -49,6 +50,18 @@ When creating a personal access token on GitHub, you must select scopes to defin
 - Yeoman: @backstage/plugin-scaffolder-backend-module-yeoman
 - Sentry: @backstage/plugin-scaffolder-backend-module-sentry
 - Cookiecutter: @backstage/plugin-scaffolder-backend-module-cookiecutter
+
+## Kind
+
+- Kind: Component: It is typically intimately linked to the source code that constitutes the component, and should be what a developer may regard a "unit of software", usually with a distinct deployable or linkable artifact.
+- Kind: Template: A template definition describes both the parameters that are rendered in the frontend part of the scaffolding wizard, and the steps that are executed when scaffolding that component.
+- Kind: API: The API can be defined in different formats, like `OpenAPI`, `AsyncAPI`, `GraphQL`, `gRPC`, or other `formats`.
+- Kind: Group: A group describes an organizational entity,Members of these groups are modeled in the catalog as kind `User`.
+- Kind: User: A user describes a person, such as an employee, a contractor, or similar. Users belong to `Group` entities in the catalog.
+- Kind: Resource: A resource describes the infrastructure a system needs to operate
+- Kind: System: A system is a collection of `resources` and `components`.
+- Kind: Domain: A Domain groups a collection of systems that share terminology, domain models, business purpose, or documentation
+- Kind: Location: A location is a marker that references other places to look for catalog data.
 
 ## GitHub Container Registry
 
