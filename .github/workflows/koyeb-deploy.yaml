@@ -19,17 +19,14 @@ jobs:
       attestations: write
       id-token: write
     steps:
-      - name: koyeb install
-        run: curl -fsSL https://raw.githubusercontent.com/koyeb/koyeb-cli/master/install.sh | sh
-      - name: add koyeb to PATH
-        run: export PATH=$HOME/.koyeb/bin:$PATH
-      - name: koyeb login
-        run: koyeb login --token ${{ secrets.KOYEB_TOKEN }}
-      - name: koyeb apps list
-        run: koyeb apps list
-      - name: koyeb services list
-        run: koyeb services list
       - name: koyeb service redeploy
-        run: koyeb service redeploy backstage-devx/backstage
-      - name: koyeb instances list
-        run: koyeb instances list --app backstage-devx
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/koyeb/koyeb-cli/master/install.sh | sh
+          export PATH=$HOME/.koyeb/bin:$PATH
+          koyeb version
+          koyeb login --token ${{ secrets.KOYEB_TOKEN }}
+          koyeb apps list
+          koyeb services list
+          koyeb service redeploy backstage-devx/backstage
+          koyeb services list
+          koyeb instances list --app backstage-devx
