@@ -63,6 +63,55 @@ docker inspect ghcr.io/NAMESPACE/IMAGE_NAME
 }
 ```
 
+## sudo yarn build-image
+
+```
+rock@redmibook:~/workspace/devx$ sudo yarn build-image
+
+[+] Building 456.6s (19/19) FINISHED                                                                                                                                        docker:default
+
+ => [internal] load build definition from Dockerfile                                                                                                                                  0.0s
+ => => transferring dockerfile: 3.15kB                                                                                                                                                0.0s
+ => [internal] load metadata for docker.io/library/node:24-trixie-slim                                                                                                              132.7s
+ => [internal] load .dockerignore                                                                                                                                                     0.0s
+ => => transferring context: 153B                                                                                                                                                     0.0s
+ => [stage-0  1/13] FROM docker.io/library/node:24-trixie-slim@sha256:4fc981bf8dfc5e36e15e0cb73c5761a14cabff0932dcad1cf26cd3c3425db5d4                                               63.1s
+
+
+...
+
+ => exporting to image                                                                                                                                                                4.9s
+ => => exporting layers                                                                                                                                                               4.9s
+ => => writing image sha256:4f625e2874e2f63069f249490c48ef1a5e6e7b9730e1180d40f0b4f0ff3e030d                                                                                          0.0s
+ => => naming to docker.io/library/backstage
+```
+
+```
+rock@redmibook:~/workspace/devx$ sudo docker images | grep 'backstage'
+backstage                                                                                latest             4f625e2874e2   8 minutes ago   1.18GB
+```
+
+> [!WARNING]  
+> ERROR: failed to build: failed to solve: failed to compute cache key
+> "/packages/backend/dist/bundle.tar.gz": not found 
+
+```
+ > [stage-0 12/13] COPY --chown=node:node packages/backend/dist/bundle.tar.gz app-config*.yaml ./:
+
+Dockerfile:67
+  65 |
+  66 |     # Then copy the rest of the backend bundle, along with any other files we might want.
+  67 | >>> COPY --chown=node:node packages/backend/dist/bundle.tar.gz app-config*.yaml ./
+  68 |     RUN tar xzf bundle.tar.gz && rm bundle.tar.gz
+  69 |
+ERROR: failed to build: failed to solve: failed to compute cache key: failed to calculate checksum of ref d09189cb-1d3f-4984-a57a-14f8dab86177::ikqijctq2x7nn4dyaz7faprl4: "/packages/backend/dist/bundle.tar.gz": not found
+Error: Process completed with exit code 1.
+##[debug]Finishing: yarn build-image
+```
+
+> [!TIP]
+> 
+
 ## packages/backend/Dockerfile
 
 ```docker

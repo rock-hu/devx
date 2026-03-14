@@ -28,6 +28,12 @@ jobs:
         run: yarn install --immutable
       - name: yarn tsc
         run: yarn tsc
+      - name: yarn build:all
+        run: yarn build:all
+      - name: list packages/backend/dist
+        run: ls -la packages/backend/dist
+      - name: list packages/app/dist
+        run: ls -la packages/app/dist
       - name: yarn build-image
         run: yarn build-image
       - name: Log in to registry
