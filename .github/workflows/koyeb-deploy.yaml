@@ -9,27 +9,21 @@ on:
       - "packages/backend/package.json"
       - ".github/workflows/backstage-containerization.yaml"
       - ".github/workflows/koyeb-deploy.yaml"
-env:
-  IMAGE_NAME: backstage
 jobs:
   pull:
-    name: docker pull ghcr.io
-    runs-on: ubuntu-latest
+    name: koyeb-cli deploy
+    runs-on: koyeb/koyeb-cli:latest
     permissions:
       packages: write
       contents: read
       attestations: write
       id-token: write
     steps:
-      - name: Log in to registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-      - name: Pull image from registry
-        run: docker pull ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
-      - name: docker images
-        run: docker images
-      # - name: docker run
-      #   run: docker run -it -p 7007:7007 backstage
-      - name: Deploy to Koyeb
-        run: |
-          docker tag ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest koyeb/${{ env.IMAGE_NAME }}:latest
-          docker push koyeb/${{ env.IMAGE_NAME }}:latest
+      - name: koyeb login
+        run: koyeb login --token ${{ secrets.KOYEB_TOKEN }}
+      - name: koyeb apps list
+        run: koyeb apps list
+      - name: koyeb services list
+        run: koyeb services list
+      - name: koyeb service redeploy
+        run: koyeb service redeploy backstage-devx/backstage

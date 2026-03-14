@@ -38,7 +38,7 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { NotificationsPage } from '@backstage/plugin-notifications';
 import { SignalsDisplay } from '@backstage/plugin-signals';
 // import { GraphiQLPage } from '@backstage-community/plugin-graphiql';
-import homePlugin from '@backstage/plugin-home/alpha';
+// import homePlugin from '@backstage/plugin-home/alpha';
 // import { LighthousePage } from '@backstage-community/plugin-lighthouse';
 import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
 

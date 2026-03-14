@@ -77,20 +77,27 @@ auth:
   #   # See https://backstage.io/docs/auth/guest/provider
   #   guest: {}
   # Auth provider registered for 'github' is misconfigured. This could mean the configs under auth.providers.github are missing or the environment variables used are not defined.
-  # environment: development
+  environment: production
   providers:
-    guest:
-      userEntityRef: user:engineering/rock-hu # userEntityRef -> ownershipEntityRefs
-      ownershipEntityRefs: [group:microservices-development/rock-hu]
-      dangerouslyAllowOutsideDevelopment: false
-    # github:
-    #   development:
-    #     clientId: ${GITHUB_CLIENT_ID_DEV}
-    #     clientSecret: ${GITHUB_CLIENT_SECRET_DEV}
-    #     sessionDuration: { hours: 24 }
-    #     signIn:
-    #       resolvers:
-    #         - resolver: emailMatchingUserEntityProfileEmail # usernameMatchingUserEntityName,emailMatchingUserEntityProfileEmail,emailLocalPartMatchingUserEntityName
+    # guest:
+    #   userEntityRef: user:engineering/rock-hu # userEntityRef -> ownershipEntityRefs
+    #   ownershipEntityRefs: [group:microservices-development/rock-hu]
+    #   dangerouslyAllowOutsideDevelopment: false
+    github:
+      development:
+        clientId: ${GITHUB_CLIENT_ID_DEV}
+        clientSecret: ${GITHUB_CLIENT_SECRET_DEV}
+        sessionDuration: { hours: 24 }
+        signIn:
+          resolvers:
+            - resolver: emailMatchingUserEntityProfileEmail # usernameMatchingUserEntityName,emailMatchingUserEntityProfileEmail,emailLocalPartMatchingUserEntityName
+      production:
+        clientId: ${GITHUB_CLIENT_ID_PROD}
+        clientSecret: ${GITHUB_CLIENT_SECRET_PROD}
+        sessionDuration: { hours: 24 }
+        signIn:
+          resolvers:
+            - resolver: emailMatchingUserEntityProfileEmail # usernameMatchingUserEntityName,emailMatchingUserEntityProfileEmail,emailLocalPartMatchingUserEntityName
 # scaffolder:
 # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
