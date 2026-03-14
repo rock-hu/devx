@@ -58,6 +58,15 @@ import {
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
 
+
+import { EntityTodoContent } from '@backstage-community/plugin-todo';
+
+// import {
+//   EntityCircleCIContent,
+//   isCircleCIAvailable,
+// } from '@circleci/backstage-plugin';
+
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -67,8 +76,6 @@ const techdocsContent = (
 );
 
 const cicdContent = (
-  // This is an example of how you can implement your company's logic in entity page.
-  // You can for example enforce that all components of type 'service' should use GitHubActions
   <EntitySwitch>
     {/*
       Here you can add support for different CI/CD services, for example
@@ -186,6 +193,9 @@ const serviceEntityPage = (
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
+    <EntityLayout.Route path="/todo" title="Todo">
+      <EntityTodoContent />
+    </EntityLayout.Route>    
   </EntityLayout>
 );
 

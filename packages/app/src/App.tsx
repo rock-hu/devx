@@ -37,9 +37,15 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { NotificationsPage } from '@backstage/plugin-notifications';
 import { SignalsDisplay } from '@backstage/plugin-signals';
+// import { GraphiQLPage } from '@backstage-community/plugin-graphiql';
+import homePlugin from '@backstage/plugin-home/alpha';
+// import lighthousePlugin from '@backstage-community/plugin-lighthouse';
+import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
+
 
 const app = createApp({
   apis,
+  
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
@@ -60,6 +66,7 @@ const app = createApp({
   components: {
     SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
+  
 });
 
 const routes = (
@@ -97,6 +104,8 @@ const routes = (
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
     <Route path="/notifications" element={<NotificationsPage />} />
+    
+    <Route path="/tech-radar" element={<TechRadarPage />}/>    
   </FlatRoutes>
 );
 

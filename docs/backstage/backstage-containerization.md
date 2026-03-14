@@ -187,3 +187,14 @@ RUN tar xzf bundle.tar.gz && rm bundle.tar.gz
 CMD ["node", "packages/backend", "--config", "app-config.yaml", "--config", "app-config.production.yaml"]
 
 ```
+
+
+## docker run -it -p 7007:7007 backstage  
+
+```bash
+sudo docker run -it -p 7007:7007 backstage
+```
+
+```
+Loading config from MergedConfigSource{FileConfigSource{path="/app/app-config.yaml"}, FileConfigSource{path="/app/app-config.production.yaml"}, EnvConfigSource{count=0}}
+```

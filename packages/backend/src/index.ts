@@ -63,4 +63,8 @@ backend.add(import('@backstage/plugin-kubernetes-backend'));
 backend.add(import('@backstage/plugin-notifications-backend'));
 backend.add(import('@backstage/plugin-signals-backend'));
 
+// https://backstage.io/docs/features/software-catalog/configuration/#subscribing-to-catalog-errors
+backend.add(import('@backstage/plugin-events-backend'));
+
+
 backend.start();
