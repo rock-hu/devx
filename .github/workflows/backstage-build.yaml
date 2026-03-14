@@ -3,6 +3,13 @@ on:
   push:
     branches:
       - "master"
+    paths:
+      - "package.json"
+      - "packages/app/package.json"
+      - "packages/backend/package.json"
+      - ".github/workflows/backstage-containerization.yaml"
+      - "packages/app/src/**"
+      - "packages/backend/src/**"
 jobs:
   build:
     runs-on: ubuntu-latest
