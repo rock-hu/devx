@@ -24,7 +24,7 @@ backend:
       - type: static
         options:
           token: ${ADMIN_CURL_TOKEN}
-          subject: admin-curl-access  
+          subject: admin-curl-access
   baseUrl: http://localhost:7007
   listen:
     port: 7007
@@ -170,10 +170,7 @@ sonarqube:
   instances:
     - name: default
       baseUrl: https://sonarcloud.io
-    - token: ${SONARCLOUD_TOKEN}
-    - apiKey: ${SONARCLOUD_TOKEN}
+      apiKey: ${SONARCLOUD_TOKEN}
     - name: sonarcloud
       baseUrl: https://sonarcloud.io
-    - token: ${SONARCLOUD_TOKEN}
-    - apiKey: ${SONARCLOUD_TOKEN}
-            
+      apiKey: ${SONARCLOUD_TOKEN}
