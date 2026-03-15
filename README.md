@@ -2,6 +2,8 @@
 
 This is your newly scaffolded Backstage App, Good Luck!
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://github.com/rock-hu/devx/)
+
 To start the app, run:
 
 ```sh
@@ -18,6 +20,12 @@ yarn backstage-cli info > backstage.log
 ```
 
 [Backstage](https://backstage-devx.koyeb.app/)
+
+## Sentry
+
+| backstage-backend                                                                                                        | backstage-app                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [backstage-app](https://internal-developer-platform.sentry.io/insights/projects/backstage-app/?project=4509372587049040) | [backstage-backend](https://internal-developer-platform.sentry.io/insights/projects/backstage-backend/?project=4509372588556368&statsPeriod=14d) |
 
 ## badges
 
