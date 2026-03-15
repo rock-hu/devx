@@ -1,0 +1,25 @@
+app:
+  title: DevX - Scaffolded Backstage
+  baseUrl: http://localhost:3000
+organization:
+  name: DevX
+backend:
+  baseUrl: http://localhost:7007
+integrations:
+  github:
+    - host: github.com
+techdocs:
+  builder: local
+auth:
+  environment: development
+  providers:
+    github: {}
+permission:
+  enabled: false
+sonarqube:
+  instances:
+    - name: default
+      baseUrl: https://sonarcloud.io
+    - name: sonarcloud
+      baseUrl: https://sonarcloud.io
+

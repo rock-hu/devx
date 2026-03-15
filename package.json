@@ -6,7 +6,7 @@
     "node": "22 || 24"
   },
   "scripts": {
-    "start": "backstage-cli repo start",
+    "start": "LOG_LEVEL=debug backstage-cli repo start",
     "build:backend": "yarn workspace backend build",
     "build:all": "backstage-cli repo build --all",
     "build-image": "yarn workspace backend build-image",
@@ -22,6 +22,9 @@
     "prettier:check": "prettier --check .",
     "new": "backstage-cli new",
     "config:check": "yarn backstage-cli config:check --strict",
+    "config:print:frontend": "yarn backstage-cli config:print --frontend > config.print.frontend.yaml",
+    "config:print:backend": "yarn backstage-cli config:print --backend > config.print.backend.yaml",
+    "config:print": "yarn backstage-cli config:print --all > config.print.all.yaml",
     "commit": "cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "prepare": "husky",

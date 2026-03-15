@@ -15,6 +15,14 @@ yarn start
 yarn backstage-cli config:check --strict
 ```
 
+## app-config.yaml  
+> Loading order of these files is as follows: 
+
+- app-config.yaml
+- app-config.<BACKSTAGE_ENV>.yaml
+- app-config.local.yaml
+- app-config.<BACKSTAGE_ENV>.local.yaml
+
 ```bash
 yarn backstage-cli info > backstage.log
 ```

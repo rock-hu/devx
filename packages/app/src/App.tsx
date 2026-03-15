@@ -43,11 +43,10 @@ import { SignalsDisplay } from '@backstage/plugin-signals';
 import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
 
 // import sonarQubePlugin from '@backstage-community/plugin-sonarqube/alpha';
-
+import { githubAuthApiRef } from '@backstage/core-plugin-api';
 
 const app = createApp({
   apis,
-  
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
@@ -66,9 +65,20 @@ const app = createApp({
     });
   },
   components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    // SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    SignInPage: props => (
+      <SignInPage
+        {...props}
+        auto
+        provider={{
+          id: 'github-auth-provider',
+          title: 'GitHub',
+          message: 'Sign in using GitHub',
+          apiRef: githubAuthApiRef,
+        }}
+      />
+    ),
   },
-  
 });
 
 const routes = (
@@ -106,8 +116,8 @@ const routes = (
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
     <Route path="/notifications" element={<NotificationsPage />} />
-    
-    <Route path="/tech-radar" element={<TechRadarPage />}/>    
+
+    <Route path="/tech-radar" element={<TechRadarPage />} />
     {/* <Route path="/lighthouse" element={<LighthousePage />} /> */}
   </FlatRoutes>
 );

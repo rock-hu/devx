@@ -1,0 +1,88 @@
+app:
+  title: DevX - Scaffolded Backstage
+  baseUrl: http://localhost:3000
+organization:
+  name: DevX
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+  csp:
+    connect-src:
+      - "'self'"
+      - "http:"
+      - "https:"
+  cors:
+    origin: http://localhost:3000
+    methods:
+      - GET
+      - HEAD
+      - PATCH
+      - POST
+      - PUT
+      - DELETE
+    credentials: true
+  database:
+    client: better-sqlite3
+    connection: <secret>
+integrations:
+  github:
+    - host: github.com
+      token: <secret>
+techdocs:
+  builder: local
+  generator:
+    runIn: docker
+  publisher:
+    type: local
+auth:
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: Ov23lilnqMyxCoH2x4VM
+        clientSecret: <secret>
+        sessionDuration:
+          hours: 24
+        signIn:
+          resolvers:
+            - resolver: emailMatchingUserEntityProfileEmail
+      production:
+        clientId: Ov23li1Rt9Z49XXixZsj
+        clientSecret: <secret>
+        sessionDuration:
+          hours: 24
+        signIn:
+          resolvers:
+            - resolver: emailMatchingUserEntityProfileEmail
+catalog:
+  readonly: true
+  processingInterval:
+    minutes: 45
+  orphanStrategy: keep
+  orphanProviderStrategy: keep
+  stitchingStrategy:
+    mode: immediate
+  rules:
+    - allow:
+        - Component
+        - System
+        - Group
+        - Resource
+        - Location
+        - Template
+        - API
+  locations:
+    - type: url
+      target: https://github.com/rock-hu/developer-platform-manifests/blob/master/manifests/catalog-entities.yaml
+permission:
+  enabled: false
+sonarqube:
+  instances:
+    - name: default
+      baseUrl: https://sonarcloud.io
+      apiKey: <secret>
+    - name: sonarcloud
+      baseUrl: https://sonarcloud.io
+      apiKey: <secret>
+

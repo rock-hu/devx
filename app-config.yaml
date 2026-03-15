@@ -90,7 +90,7 @@ auth:
   #   # See https://backstage.io/docs/auth/guest/provider
   #   guest: {}
   # Auth provider registered for 'github' is misconfigured. This could mean the configs under auth.providers.github are missing or the environment variables used are not defined.
-  environment: development
+  environment: ${BACKSTAGE_AUTH_ENVIRONMENT:-development}
   providers:
     # guest:
     #   userEntityRef: user:engineering/rock-hu # userEntityRef -> ownershipEntityRefs
