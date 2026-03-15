@@ -12,19 +12,19 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  auth:
-    externalAccess:
-      - type: static
-        options:
-          token: ${CICD_TOKEN}
-          subject: cicd-system-completion-events
-        # Restrictions are optional; see below
-        accessRestrictions:
-          - plugin: events
-      - type: static
-        options:
-          token: ${ADMIN_CURL_TOKEN}
-          subject: admin-curl-access
+  # auth:
+  #   externalAccess:
+  #     - type: static
+  #       options:
+  #         token: ${CICD_TOKEN}
+  #         subject: cicd-system-completion-events
+  #       # Restrictions are optional; see below
+  #       accessRestrictions:
+  #         - plugin: events
+  #     - type: static
+  #       options:
+  #         token: ${ADMIN_CURL_TOKEN}
+  #         subject: admin-curl-access
   baseUrl: http://localhost:7007
   listen:
     port: 7007
