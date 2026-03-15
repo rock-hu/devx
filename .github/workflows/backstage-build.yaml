@@ -10,6 +10,8 @@ on:
       - "packages/backend/package.json"
       - "packages/backend/src/**"
       - "packages/backend/Dockerfile"
+      - "app-config.yaml"
+      - "app-config.production.yaml"
       - ".github/workflows/backstage-build.yaml"
 jobs:
   build:
@@ -21,6 +23,6 @@ jobs:
           node-version: 24
       # - run: npm install --force --verbose
       - run: yarn install --immutable
-      # - run: yarn backstage-cli config:check --strict
+      - run: yarn backstage-cli config:check --strict
       - run: yarn tsc
       - run: yarn build:backend
