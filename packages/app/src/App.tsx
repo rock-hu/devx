@@ -42,6 +42,8 @@ import { SignalsDisplay } from '@backstage/plugin-signals';
 // import { LighthousePage } from '@backstage-community/plugin-lighthouse';
 import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
 
+// import sonarQubePlugin from '@backstage-community/plugin-sonarqube/alpha';
+
 
 const app = createApp({
   apis,

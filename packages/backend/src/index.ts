@@ -7,6 +7,12 @@
  */
 
 import { createBackend } from '@backstage/backend-defaults';
+// add this near the other plugin imports
+// import sonarqube from './plugins/sonarqube';
+// inside the main function after you create the env for the backend
+// const sonarqubeEnv = useHotMemoize(module, () => createEnv('sonarqube'));
+
+
 
 const backend = createBackend();
 
@@ -67,5 +73,10 @@ backend.add(import('@backstage/plugin-signals-backend'));
 backend.add(import('@backstage/plugin-events-backend'));
 
 backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
+
+backend.add(import('@backstage-community/plugin-sonarqube-backend'));
+// add this where you wire up other routers
+// apiRouter.use('/sonarqube', await sonarqube(sonarqubeEnv));
+
 
 backend.start();

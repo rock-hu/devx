@@ -61,6 +61,12 @@ import {
 
 import { EntityTodoContent } from '@backstage-community/plugin-todo';
 
+import { EntitySonarQubeCard, SonarQubeRelatedEntitiesOverview } from '@backstage-community/plugin-sonarqube';
+import { isSonarQubeAvailable } from '@backstage-community/plugin-sonarqube-react';
+
+const MISSING_ANNOTATION_READ_MORE_URL = 'https://backstage.io/docs/features/software-catalog/descriptor';
+
+
 // import {
 //   EntityCircleCIContent,
 //   isCircleCIAvailable,
@@ -147,7 +153,21 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
-  </Grid>
+    <Grid item md={6}>
+      <EntityAboutCard variant="gridItem" />
+    </Grid>
+
+    <EntitySwitch>
+      <EntitySwitch.Case if={isSonarQubeAvailable}>
+        <Grid item md={6}>
+          <EntitySonarQubeCard
+            variant="gridItem"
+            missingAnnotationReadMoreUrl={MISSING_ANNOTATION_READ_MORE_URL}
+          />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
+  </Grid>    
 );
 
 const serviceEntityPage = (
@@ -384,6 +404,9 @@ const systemPage = (
         unidirectional={false}
       />
     </EntityLayout.Route>
+    <EntityLayout.Route path="/sonarqube" title="Code Quality">
+      <SonarQubeRelatedEntitiesOverview relationType={RELATION_HAS_PART} entityKind="component" />
+    </EntityLayout.Route>    
   </EntityLayout>
 );
 

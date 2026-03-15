@@ -71,5 +71,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
   }
 }

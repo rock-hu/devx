@@ -166,3 +166,14 @@ catalog:
 permission:
   # setting this to `false` will disable permissions
   enabled: false
+sonarqube:
+  instances:
+    - name: default
+      baseUrl: https://sonarcloud.io
+    - token: ${SONARCLOUD_TOKEN}
+    - apiKey: ${SONARCLOUD_TOKEN}
+    - name: sonarcloud
+      baseUrl: https://sonarcloud.io
+    - token: ${SONARCLOUD_TOKEN}
+    - apiKey: ${SONARCLOUD_TOKEN}
+            

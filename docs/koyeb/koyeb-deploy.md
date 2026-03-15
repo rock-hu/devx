@@ -77,3 +77,172 @@ INFO[0003] Service backstage-devx/backstage redeployed.
 ID      	SERVICE                             	STATUS 	REGION	DATACENTER	CREATED AT
 af4f6377	76eb45b2-16a6-453c-bb51-b3ad80eb0170	HEALTHY	fra   	fra1      	14 Mar 26 14:16 UTC
 ```
+
+```
+Loading config from MergedConfigSource{FileConfigSource{path="/app/app-config.yaml"}, FileConfigSource{path="/app/app-config.production.yaml"}, EnvConfigSource{count=0}}
+```
+
+```json
+{
+  "level": "info",
+  "message": "Found 1 new secrets in config that will be redacted",
+  "service": "backstage"
+}
+```
+
+```json
+{
+  "level": "info",
+  "message": "Listening on :7007",
+  "service": "rootHttpRouter"
+}
+```
+
+```json
+{
+  "level": "info",
+  "message": "Plugin initialization started: 'app', 'auth', 'catalog', 'events', 'kubernetes', 'notifications', 'permission', 'proxy', 'scaffolder', 'search', 'signals', 'techdocs'",
+  "service": "backstage",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'app' threw an error during startup, waiting for 11 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'app' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'app' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'app' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'app' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 0)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'proxy' threw an error during startup, waiting for 10 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'proxy' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'proxy' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'proxy' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'proxy' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 1)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'scaffolder' threw an error during startup, waiting for 9 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'scaffolder' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'scaffolder' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'scaffolder' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'scaffolder' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 2)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'techdocs' threw an error during startup, waiting for 8 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'techdocs' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'techdocs' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'techdocs' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'techdocs' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 3)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'auth' threw an error during startup, waiting for 7 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'auth' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'auth' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'auth' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'auth' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 4)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'catalog' threw an error during startup, waiting for 6 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'catalog' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'catalog' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'catalog' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'catalog' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 5)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'permission' threw an error during startup, waiting for 5 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'permission' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'permission' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'permission' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'permission' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 6)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'search' threw an error during startup, waiting for 4 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'search' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'search' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'search' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'search' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 7)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'kubernetes' threw an error during startup, waiting for 3 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'kubernetes' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'kubernetes' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'kubernetes' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'kubernetes' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 8)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'notifications' threw an error during startup, waiting for 2 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'notifications' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'notifications' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'notifications' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'notifications' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 9)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'signals' threw an error during startup, waiting for 1 other plugins to finish before shutting down the process. Failed to instantiate service 'core.httpRouter' for 'signals' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'signals' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'signals' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'signals' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 10)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Plugin 'events' threw an error during startup. Failed to instantiate service 'core.httpRouter' for 'events' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'events' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "service": "backstage",
+  "stack": "Error: Failed to instantiate service 'core.httpRouter' for 'events' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'events' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at /app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:232:21\n    at async Promise.all (index 0)\n    at async ServiceRegistry.initializeEagerServicesWithScope (/app/node_modules/@backstage/backend-app-api/dist/wiring/ServiceRegistry.cjs.js:161:11)\n    at async /app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:285:11\n    at async Promise.all (index 11)\n    at async #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:282:5)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "info",
+  "message": "Plugin initialization complete, newly initialized: 'app', 'proxy', 'scaffolder', 'techdocs', 'auth', 'catalog', 'permission', 'search', 'kubernetes', 'notifications', 'signals', 'events'",
+  "service": "backstage",
+  "type": "initialization"
+}
+```
+
+```json
+{
+  "level": "error",
+  "message": "Unhandled rejection Backend startup failed due to the following errors:\n  Plugin 'app' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'app' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'app' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'proxy' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'proxy' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'proxy' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'scaffolder' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'scaffolder' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'scaffolder' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'techdocs' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'techdocs' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'techdocs' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'auth' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'auth' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'auth' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'catalog' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'catalog' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'catalog' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'permission' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'permission' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'permission' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'search' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'search' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'search' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'kubernetes' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'kubernetes' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'kubernetes' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'notifications' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'notifications' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'notifications' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'signals' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'signals' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'signals' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'events' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'events' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'events' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'",
+  "name": "BackendStartupError",
+  "service": "backstage",
+  "stack": "BackendStartupError: Backend startup failed due to the following errors:\n  Plugin 'app' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'app' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'app' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'proxy' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'proxy' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'proxy' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'scaffolder' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'scaffolder' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'scaffolder' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'techdocs' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'techdocs' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'techdocs' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'auth' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'auth' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'auth' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'catalog' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'catalog' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'catalog' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'permission' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'permission' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'permission' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'search' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'search' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'search' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'kubernetes' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'kubernetes' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'kubernetes' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'notifications' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'notifications' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'notifications' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'signals' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'signals' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'signals' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n  Plugin 'events' startup failed; caused by Error: Failed to instantiate service 'core.httpRouter' for 'events' because the factory function threw an error, Error: Failed to instantiate service 'core.auth' for 'events' because the factory function threw an error, Error: Missing required config value at 'backend.auth.externalAccess[0].options.token' in 'app-config.yaml'\n    at #doStart (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:354:13)\n    at async BackendInitializer.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackendInitializer.cjs.js:180:12)\n    at async BackstageBackend.start (/app/node_modules/@backstage/backend-app-api/dist/wiring/BackstageBackend.cjs.js:19:12)",
+  "type": "unhandledRejection"
+}
+```

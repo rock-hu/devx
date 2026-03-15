@@ -16,6 +16,8 @@
   "dependencies": {
     "@backstage-community/plugin-github-actions": "^0.21.1",
     "@backstage-community/plugin-shortcuts": "^0.18.0",
+    "@backstage-community/plugin-sonarqube": "^0.23.0",
+    "@backstage-community/plugin-sonarqube-react": "^0.15.0",
     "@backstage-community/plugin-tech-radar": "^1.16.0",
     "@backstage-community/plugin-todo": "^0.17.1",
     "@backstage/app-defaults": "^1.7.5",
