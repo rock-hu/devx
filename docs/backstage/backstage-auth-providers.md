@@ -48,3 +48,45 @@ Failed to sign-in, unable to resolve user identity. Please verify that your cata
 
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
+
+> [!CAUTION]  
+> `GET /github/start?scope=read` Service has not started up yet.
+
+```json
+{
+  "error": {
+    "name": "ServiceUnavailableError",
+    "message": "Service has not started up yet"
+  },
+  "request": {
+    "method": "GET",
+    "url": "/github/start?scope=read%3Auser&origin=https%3A%2F%2Fbackstage-devx.koyeb.app&flow=popup&env=production"
+  },
+  "response": {
+    "statusCode": 503
+  }
+}
+```
+
+
+> [!CAUTION]  
+> `GET /api/notifications/status` Missing credentials.
+
+```json
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Missing credentials"
+    },
+    "request": {
+        "method": "GET",
+        "url": "/status"
+    },
+    "response": {
+        "statusCode": 401
+    }
+}
+```
+
+
+`https://backstage-devx.koyeb.app/api/auth/github/start?env=production`

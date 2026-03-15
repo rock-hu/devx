@@ -12,6 +12,19 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
+  auth:
+    externalAccess:
+      - type: static
+        options:
+          token: ${CICD_TOKEN}
+          subject: cicd-system-completion-events
+        # Restrictions are optional; see below
+        accessRestrictions:
+          - plugin: events
+      - type: static
+        options:
+          token: ${ADMIN_CURL_TOKEN}
+          subject: admin-curl-access  
   baseUrl: http://localhost:7007
   listen:
     port: 7007
@@ -77,7 +90,7 @@ auth:
   #   # See https://backstage.io/docs/auth/guest/provider
   #   guest: {}
   # Auth provider registered for 'github' is misconfigured. This could mean the configs under auth.providers.github are missing or the environment variables used are not defined.
-  environment: production
+  environment: development
   providers:
     # guest:
     #   userEntityRef: user:engineering/rock-hu # userEntityRef -> ownershipEntityRefs
@@ -152,4 +165,4 @@ catalog:
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
 permission:
   # setting this to `false` will disable permissions
-  enabled: true
+  enabled: false

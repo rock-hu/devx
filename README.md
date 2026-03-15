@@ -10,8 +10,14 @@ yarn start
 ```
 
 ```bash
+yarn backstage-cli config:check --strict
+```
+
+```bash
 yarn backstage-cli info > backstage.log
 ```
+
+[Backstage](https://backstage-devx.koyeb.app/)
 
 ## badges
 
@@ -68,8 +74,6 @@ When creating a personal access token on GitHub, you must select scopes to defin
 ![](./docs/ghcr.io-backstage-latest.png)
 
 ## [Koyeb - GitHub Container Registry](https://www.koyeb.com/docs/build-and-deploy/private-container-registry-secrets#github-container-registry)
-
-[Backstage](https://backstage-devx.koyeb.app/)
 
 ![](./docs/koyeb-services.png)
 

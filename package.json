@@ -20,7 +20,9 @@
     "lint": "backstage-cli repo lint --since origin/master",
     "lint:all": "backstage-cli repo lint",
     "prettier:check": "prettier --check .",
-    "new": "backstage-cli new"
+    "new": "backstage-cli new",
+    "config:check": "yarn backstage-cli config:check --strict",
+    "commit": "cz"
   },
   "workspaces": {
     "packages": [
@@ -34,9 +36,13 @@
     "@jest/environment-jsdom-abstract": "^30.0.0",
     "@playwright/test": "^1.32.3",
     "@types/jest": "^30.0.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7",
     "jest": "^30.2.0",
     "jsdom": "^27.1.0",
     "node-gyp": "^10.0.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.3.2",
     "typescript": "~5.8.0"
   },
@@ -54,5 +60,15 @@
       "prettier --write"
     ]
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "husky": {
+    "hooks": {
+      
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
